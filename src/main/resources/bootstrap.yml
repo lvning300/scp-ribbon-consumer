@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      profile: ${config_profile}
+      name: scp-ribbon-consumer
+      uri: ${config_url}
+      enabled: true

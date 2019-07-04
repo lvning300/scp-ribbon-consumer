@@ -1,0 +1,28 @@
+#server:
+#  port: 7001
+#spring:
+#  application:
+#    name: scp-ribbon-consumer
+#
+#eureka:
+#  instance:
+#    hostname: localhost
+#    instance-id: localhost:${server.port}
+#    prefer-ip-address: true # 开启以Ip+端口多方式显示Eureka界面
+#    lease-renewal-interval-in-seconds: 30 # 向Eureka发送心跳时间为30秒
+#    lease-expiration-duration-in-seconds: 90 #服务检查剔除无用服务时间为90秒
+#  client:
+#    serviceUrl:
+#      defaultZone: http://peer1:9009/eureka/,http://peer2:9010/eureka/
+#
+#
+##启用监控
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include:
+#          - "*"  # 开放所有端点health，info，metrics，通过actuator/+端点名就可以获取相应的信息。默认打开health和info
+#  endpoint:
+#    health:
+#      show-details: always  #未开启actuator/health时，我们获取到的信息是{"status":"UP"}，status的值还有可能是 DOWN。开启后打印详细信息
